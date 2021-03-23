@@ -100,13 +100,6 @@ gulp.task('img', function() {
 });
 
 
-//  HTACCESS
-gulp.task('htaccess', function() {
-  return gulp.src('.htaccess')
-    .pipe(gulp.dest(dest));
-});
-
-
 //  WATCH
 gulp.task('watch', function() {
   gulp.watch(root+'/pug/**/*', ['pug', browserSync.reload]);
@@ -124,5 +117,5 @@ gulp.task('default', function() {
 
 //  RELEASE
 gulp.task('release', function() {
-  runSequence(['del', 'pug', 'babel', 'stylus', 'img', 'htaccess']);
+  runSequence(['del', 'pug', 'babel', 'stylus', 'img']);
 });
