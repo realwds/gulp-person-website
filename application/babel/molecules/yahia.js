@@ -131,12 +131,11 @@ var render = function(a) {
 var Yahia = {
 	load: function(source) {
 		var imgData;
-		if(source == 'home') imgData = 'includes/images/yahiarefaiea-home.png';
-		else if(source == 'secret') imgData = 'includes/images/yahiarefaiea-secret.png';
-		else if(source == 'bucket') imgData = 'includes/images/yahiarefaiea-bucket.png';
-		else if(source == 'projectsAll') imgData = 'includes/images/yahiarefaiea-projects.png';
-		else if(source == 'thoughtsAll') imgData = 'includes/images/yahiarefaiea-thoughts.png';
-		else if(source == 'notFound') imgData = 'includes/images/yahiarefaiea-notFound.png';
+		if(source == 'home') imgData = 'includes/images/realwds.png';
+		else if(source == 'bucket') imgData = 'includes/images/realwds.png';
+		else if(source == 'projectsAll') imgData = 'includes/images/realwds.png';
+		else if(source == 'thoughtsAll') imgData = 'includes/images/realwds.png';
+		else if(source == 'notFound') imgData = 'includes/images/realwds.png';
 		
 		var image = document.createElement("img");
 		image.onload = function () {

@@ -11,7 +11,6 @@ $(document).ready(function() {
   RealProgress.onLoad = function() {
     Router.route(undefined, function() {
       Router.listen()
-      Submit.listen('.submit')
       if(!md.mobile()) Stars.init()
       setTimeout(function() {
         $('#signature').removeClass('loading')
