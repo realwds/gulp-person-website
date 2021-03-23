@@ -117,7 +117,6 @@ var render = function(a) {
 
 	requestAnimationFrame(render);
 
-
 	particles.geometry.verticesNeedUpdate = true;
 	if(!isMouseDown){
 		camera.position.x += (0-camera.position.x)*0.06;
