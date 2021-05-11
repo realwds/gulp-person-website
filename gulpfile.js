@@ -1,7 +1,6 @@
 //  LOAD PACKAGES
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     del = require('del'),
-    runSequence = require('run-sequence'),
     browserSync = require('browser-sync'),
     pkg = require('./package.json'),
     banner = require('gulp-banner'),
@@ -13,7 +12,6 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     stylus = require('gulp-stylus'),
     koutoSwiss = require('kouto-swiss'),
-    fs = require('fs'),
 
     //  DIRECTORIES
     root = 'application',
@@ -43,13 +41,13 @@ var gulp = require('gulp'),
 //  DELETE
 gulp.task('del', function() {
   return del.sync(dest);
-});
+})
 
 
 //  BROWSER SYNC
 gulp.task('browserSync', function() {
   browserSync({server: {baseDir: dest}});
-});
+})
 
 
 //  PUG
@@ -59,7 +57,7 @@ gulp.task('pug', function() {
       pretty: true
      }))
     .pipe(gulp.dest(dest));
-});
+})
 
 
 //  BABEL
@@ -75,7 +73,7 @@ gulp.task('babel', function() {
     .pipe(banner(comment, {pkg:pkg}))
     .pipe(rename({extname:'.'+min+'.js'}))
     .pipe(gulp.dest(dest+'/'+assets+'/'+js));
-});
+})
 
 
 //  STYLUS
@@ -90,32 +88,31 @@ gulp.task('stylus', function() {
     .pipe(banner(comment, {pkg:pkg}))
     .pipe(rename({extname:'.'+min+'.css'}))
     .pipe(gulp.dest(dest+'/'+assets+'/'+css));
-});
+})
 
 
 //  IMAGES
 gulp.task('img', function() {
   return gulp.src(root+'/img/**/*')
     .pipe(gulp.dest(dest+'/'+assets+'/'+img));
-});
+})
 
 
 //  WATCH
 gulp.task('watch', function() {
-  gulp.watch(root+'/pug/**/*', ['pug', browserSync.reload]);
-  gulp.watch(root+'/babel/**/*', ['babel', browserSync.reload]);
-  gulp.watch(root+'/stylus/**/*', ['stylus', browserSync.reload]);
-  gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
+  gulp.watch(root+'/pug/**/*', gulp.series(['pug', browserSync.reload]))
+  gulp.watch(root+'/babel/**/*', gulp.series(['babel', browserSync.reload]))
+  gulp.watch(root+'/stylus/**/*', gulp.series(['stylus', browserSync.reload]))
+  gulp.watch(root+'/img/**/*', gulp.series(['img', browserSync.reload]))
 });
-
 
 //  DEFAULT
-gulp.task('default', function() {
-  runSequence(['del', 'pug', 'babel', 'stylus', 'img', 'browserSync', 'watch']);
-});
+gulp.task('default', gulp.parallel(
+  'del', 'pug', 'babel', 'stylus', 'img', 'browserSync', 'watch'
+))
 
 
 //  RELEASE
-gulp.task('release', function() {
-  runSequence(['del', 'pug', 'babel', 'stylus', 'img']);
-});
+gulp.task('release', gulp.parallel(
+  'del', 'pug', 'babel', 'stylus', 'img'
+))
