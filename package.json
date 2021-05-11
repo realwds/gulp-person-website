@@ -12,6 +12,7 @@
   },
   "url": "https://realwds.github.io/gulp-person-website",
   "dependencies": {
+    "@babel/core": "^7.14.0",
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
