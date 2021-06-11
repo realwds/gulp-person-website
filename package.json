@@ -1,7 +1,7 @@
 {
-  "name": "gulp-person-website",
+  "name": "realwds-website",
   "version": "1.0.0",
-  "description": "I’m a 22 years old handsome guy who grows up in a small town in Syria.",
+  "description": "realwds's website",
   "repository": {
     "type": "git",
     "url": "git+https://YahiaRefaiea@bitbucket.org/YahiaRefaiea/yahiarefaiea-official-website-beta.git"
@@ -10,7 +10,7 @@
     "name": "realwds",
     "email": "wds@disnot.com"
   },
-  "url": "https://realwds.github.io/gulp-person-website",
+  "url": "https://realwds.github.io/realwds-website",
   "dependencies": {
     "@babel/core": "^7.14.0",
     "browser-sync": "^2.26.14",
