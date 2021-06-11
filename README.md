@@ -1,4 +1,4 @@
-# gulp-person-website
+# realwds-website
 
 ## 特性（Features）
 
@@ -7,7 +7,7 @@
 ## 安装使用（Installation）
 
 ```shell
-git clone https://github.com/realwds/gulp-person-website.git
+git clone https://github.com/realwds/realwds-website.git
 npm install
 gulp
 ```
