@@ -1,8 +1,8 @@
 /*
- *  gulp-person-website 1.0.0
+ *  realwds-website 1.0.0
  *  
- *  I’m a 22 years old handsome guy who grows up in a small town in Syria.
- *  https://realwds.github.io/gulp-person-website
+ *  realwds's website
+ *  https://realwds.github.io/realwds-website
  *  wds@disnot.com
  *  
  *  Last update on: 2021/6/11
